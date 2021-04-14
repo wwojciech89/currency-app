@@ -1,10 +1,10 @@
 import React from 'react';
-import './App.css';
+import "./App.css"
+import ProfileWrapper from "./assets/components/ProfileWrapper/ProfileWrapper";
 
 function App() {
   return (
-    <div className="App">i
-    </div>
+    <ProfileWrapper />
   );
 }
 

@@ -2,12 +2,16 @@ import React from 'react';
 import "./App.css"
 import ProfileWrapper from "./assets/components/ProfileWrapper/ProfileWrapper";
 import FavoritesWrapper from "./assets/components/FavoritesWrapper/FavortiesWrapper";
+import CurrencyWrapper from "./assets/components/CurrencyWrapper/CurrencyWrapper";
 
 function App() {
   return(
   <>
     <ProfileWrapper />
-    <FavoritesWrapper />
+    <div className="main__wrapper">
+      <CurrencyWrapper/>
+      <FavoritesWrapper />
+    </div>
     </>
   )
 }

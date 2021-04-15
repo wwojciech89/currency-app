@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from "../CurrencyCell/CurrencyCell.module.scss";
+import axios from "axios"
 
 const CurrencyCell = () => (
     <div className={styles.cell__wrapper}>

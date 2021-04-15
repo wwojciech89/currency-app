@@ -1,13 +1,25 @@
 .wrapper {
-  width: 500px;
-  height: 500px;
+  width: 600px;
   background-color: rgb(201, 92, 223);
   margin: auto;
   border-radius: 15px;
   box-shadow: 2px 2px 2px 2px rgb(177, 173, 173);
 
   h2 {
-    margin-left: 20px;
+    margin-left: 60px;
     margin-top: 20px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  a {
+    text-decoration: none;
+    margin-left: 60px;
+    color: black;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 4px;
+    font-weight: 500;
+    font-size: 12px;
+    background-color: white;
   }
 }

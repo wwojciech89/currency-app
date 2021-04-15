@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from "../CurrencyCell/CurrencyCell.module.scss";
-import axios from "axios"
 
-const CurrencyCell = () => (
+const CurrencyCell = () => {
+
+    return (
     <div className={styles.cell__wrapper}>
         <div className={styles.flag__wrapper}>
             <div className={styles.flag}></div>
@@ -16,7 +17,8 @@ const CurrencyCell = () => (
             <div className={styles.delete}>Delete</div>
         </div>
     </div>
-)
+    )
+}
 
 
 

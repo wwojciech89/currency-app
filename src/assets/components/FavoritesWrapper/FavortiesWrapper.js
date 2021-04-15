@@ -7,7 +7,6 @@ const FavoritesWrapper = () => {
     <div className={styles.wrapper}>
         <h2>Favorites Currency</h2>
         <CurrencyCell />
-        <a href="/">Add favorites</a>
     </div>
     )
 }

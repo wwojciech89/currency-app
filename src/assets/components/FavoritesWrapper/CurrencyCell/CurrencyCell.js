@@ -11,7 +11,7 @@ const CurrencyCell = () => {
         <div className={styles.text__wrapper}>
             <p>EUR</p>
             <p>Euro</p>
-            <p>4,56zł</p>
+            <p>4,57zł</p>
         </div>
         <div className={styles.button__wrapper}>
             <div className={styles.delete}>Delete</div>

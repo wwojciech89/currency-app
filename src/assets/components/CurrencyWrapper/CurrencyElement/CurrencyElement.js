@@ -2,13 +2,13 @@ import React from 'react';
 import styles from "../CurrencyElement/CurrencyElement.module.scss";
 
 
-const CurrencyElement = (props) => {
-    console.log(props)
+const CurrencyElement = ({data}) => {
+    console.log(data)
     return(
        <div className={styles.element}>
-        <p></p>
-        <p>EURO</p>
-        <p>4,56zł</p>
+        <p>{data.currency}</p>
+        <p>{data.code}</p>
+        <p>{data.mid}</p>
     </div>)
 }
 

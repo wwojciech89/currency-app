@@ -6,12 +6,19 @@ import {DataContext} from "../../../context"
 const CurrencyWrapper = () => {
 
     const data = useContext(DataContext);
-    console.log(data)
+
+    const mappedCurrencies = data.map(el =>
+        <CurrencyElement data={el}/>
+        )
+
+
+
+
 return (
          (
             <div className={styles.wrapper}>
         <h3>Currencies</h3>
-        <CurrencyElement/>
+            {mappedCurrencies}
     </div>
         )
 )}

@@ -4,13 +4,17 @@ import heartGreen from "../../../images/heart-green.png"
 import heartPink from "../../../images/heart-pink.png"
 
 const CurrencyElement = ({data}) => {
-    console.log(data)
+
+    const handleClick = () => {
+        localStorage.setItem(`code${data.code}`, `${data.code}`)
+    }
+
     return(
        <div className={styles.element}>
         <p className={styles.name}>{data.currency}</p>
         <p className={styles.code}>{data.code}</p>
         <p className={styles.mid}>{data.mid}</p>
-        <img className={styles.picture} src={heartGreen} alt="heart"/>
+        <img className={styles.picture} src={heartGreen} alt="heart" onClick={handleClick}/>
     </div>)
 }
 

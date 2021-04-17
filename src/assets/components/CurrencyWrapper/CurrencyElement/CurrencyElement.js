@@ -4,7 +4,8 @@ import heartGreen from "../../../images/heart-green.png"
 import heartPink from "../../../images/heart-pink.png"
 
 const CurrencyElement = ({data}) => {
-    console.log(data)
+
+
     const handleClick = () => {
         localStorage.setItem(`code${data.code}`, `${data.code}`)
     }

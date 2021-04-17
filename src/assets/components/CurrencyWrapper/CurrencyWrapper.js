@@ -6,6 +6,7 @@ import {DataContext} from "../../../context"
 const CurrencyWrapper = () => {
 
     const data = useContext(DataContext);
+    console.log(data)
 
     const mappedCurrencies = data.map(el =>
         <CurrencyElement data={el} key={el.code}/>

@@ -9,13 +9,13 @@ const FavoritesWrapper = () => {
 
 
    const favoritesCurrencies = data.map(el =>
-        <CurrencyCell data={el} />
+        <CurrencyCell data={el} key={el.code}/>
         )
 
 
     return (
             (<div className={styles.wrapper}>
-        <h2>Favorites Currency</h2>
+        <h3>Favorites Currency</h3>
         {favoritesCurrencies}
         </div>
         )

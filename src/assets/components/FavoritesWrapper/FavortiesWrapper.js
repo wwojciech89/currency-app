@@ -6,10 +6,15 @@ import {DataContext} from "../../../context"
 const FavoritesWrapper = () => {
 
     const data = useContext(DataContext);
+    let local = "";
 
+   const favoritesCurrencies = data.map(el => {
 
-   const favoritesCurrencies = data.map(el =>
-        <CurrencyCell data={el} key={el.code}/>
+        local = localStorage.getItem(`code${el.code}`)
+        if (el.code === local) {
+        
+        return <CurrencyCell data={el} key={el.code}/>
+        }}
         )
 
 

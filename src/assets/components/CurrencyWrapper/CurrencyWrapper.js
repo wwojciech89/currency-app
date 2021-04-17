@@ -8,9 +8,10 @@ const CurrencyWrapper = () => {
     const data = useContext(DataContext);
 
 
-    const mappedCurrencies = data.map(el =>
-        <CurrencyElement data={el} key={el.code}/>
-        )
+    const mappedCurrencies = data.map(el => (
+
+         <CurrencyElement data={el} key={el.code}/>
+    ));
 
 return (
          (

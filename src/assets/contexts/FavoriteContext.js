@@ -1,26 +1,43 @@
-import React, {createContext, useEffect, useState, } from "react";
-import axios from 'axios';
-
-const url = "http://api.nbp.pl/api/exchangerates/tables/a/"
-
-async function getData(url) {
-const res = await axios.get(url);
-
-const favorites = res.data[0].rates;
-
-return favorites
-}
+import React, {createContext, useContext, useEffect, useState, } from "react";
+import { DataContext } from "./DataContext";
 
 
+export const FavoritesContext = createContext();
 
-export const DataContext = createContext();
-
-export const DataContextProvider =({children}) => {
+export const FavoritesContextProvider =({children}) => {
     const [favorites,setFavorites] = useState([]);
 
-    useEffect(async () => {
-        setFavorites(await getData(url));
-    }, []);
-    return <FavoritesContext.Provider value={favorites}>{children}</FavoritesContext.Provider>;
+    const data = useContext(DataContext);
+
+    useEffect(() => {
+
+        let codes = localStorage.getItem("favoriteCodes");
+        codes = codes ? JSON.parse(codes) : [];
+
+        if (codes.length) {
+            setFavorites(data.filter(el => {
+                return codes.includes(el.code)
+            }))
+        }
+    }, [data]);
+
+    const addFavorite = (code) => {
+        const newFavorites = [...favorites]
+        const newFavorite = data.find(el => el.code === code)
+        newFavorites.push(newFavorite)
+        setFavorites(newFavorites)
+    }
+
+    useEffect(() => {
+        if (!favorites.length) return;
+        const codes = favorites.map(el => {
+            return el.code})
+
+            
+        localStorage.setItem("favoriteCodes", JSON.stringify(codes))
+    },[favorites])
+
+
+    return <FavoritesContext.Provider value={{favorites,addFavorite}}>{children}</FavoritesContext.Provider>;
 }
 

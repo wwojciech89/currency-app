@@ -1,24 +1,17 @@
 import React, {useContext, useState} from 'react';
 import styles from "../FavoritesWrapper/FavoritesWrapper.module.scss";
-import CurrencyCell from "./CurrencyCell/CurrencyCell"
-import {DataContext} from "../../contexts/DataContext"
+import CurrencyCell from "./CurrencyCell/CurrencyCell";
+import {FavoritesContext} from "../../contexts/FavoriteContext";
 
 const FavoritesWrapper = () => {
 
-    const [localData, setLocalData] = useState();
+    const {favorites} = useContext(FavoritesContext)
+    // console.log('favorites', favorites)
 
+   const favoritesCurrencies = favorites?.map(el => {
 
-    const data = useContext(DataContext);
-    let local = "";
-
-   const favoritesCurrencies = data.map(el => {
-
-        local = localStorage.getItem(`code${el.code}`)
-
-        if (el.code === local) {
         return <CurrencyCell data={el} key={el.code}/>
-        }}
-        )
+        })
 
 
     return (

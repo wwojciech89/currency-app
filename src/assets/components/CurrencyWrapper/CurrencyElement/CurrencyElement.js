@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styles from "../CurrencyElement/CurrencyElement.module.scss";
 import heartGreen from "../../../images/heart-green.png"
 import heartPink from "../../../images/heart-pink.png"
+import { FavoritesContext } from '../../../contexts/FavoriteContext';
+
 
 const CurrencyElement = ({data}) => {
-
+    const {addFavorite} = useContext(FavoritesContext)
+    // console.log(addFavorite, data.code)
 
     const handleClick = () => {
-        localStorage.setItem(`code${data.code}`, `${data.code}`)
+        addFavorite(data.code);
     }
 
     return(

@@ -10,3 +10,5 @@ APP created in React with scss modules for styling.
 Used React context to transfer data between components. 
 
 Data fetched from NBP Api with axios.
+
+You can see app here: https://wwojciech89.github.io/currency-app/

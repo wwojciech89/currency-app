@@ -1,7 +1,7 @@
 import React, {createContext, useEffect, useState, } from "react";
 import axios from 'axios';
 
-const url = "http://api.nbp.pl/api/exchangerates/tables/a/"
+const url = "https://api.nbp.pl/api/exchangerates/tables/a/"
 
 async function getData(url) {
 const res = await axios.get(url);

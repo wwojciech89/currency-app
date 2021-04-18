@@ -21,7 +21,16 @@
 
   .delete {
     margin-left: 70px;
-    width: 24px;
     height: 24px;
+    padding: 4px;
+    background-color: rgb(201, 92, 223);
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .delete:hover {
+    background-color: rgb(102, 9, 121);
+    color: white;
+
   }
 }

@@ -6,11 +6,17 @@ import { FavoritesContext } from '../../../contexts/FavoriteContext';
 
 
 const CurrencyElement = ({data}) => {
-    const {addFavorite} = useContext(FavoritesContext)
-    // console.log(addFavorite, data.code)
+    const {addFavorite, favorites} = useContext(FavoritesContext)
+ 
 
     const handleClick = () => {
         addFavorite(data.code);
+    }   
+
+    const alreadyAdded = () => {
+        return favorites.find(el => {
+            return el.code === data.code
+        })
     }
 
     return(
@@ -18,7 +24,7 @@ const CurrencyElement = ({data}) => {
         <p className={styles.name}>{data.currency}</p>
         <p className={styles.code}>{data.code}</p>
         <p className={styles.mid}>{data.mid}</p>
-        <img className={styles.picture} src={heartGreen} alt="heart" onClick={handleClick}/>
+        {!alreadyAdded() && <img className={styles.picture} src={heartGreen} alt="heart" onClick={handleClick}/>}
     </div>)
 }
 

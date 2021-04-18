@@ -1,11 +1,14 @@
-import React from 'react';
+import React,{useContext}from 'react';
 import styles from "../CurrencyCell/CurrencyCell.module.scss";
+import { FavoritesContext } from '../../../contexts/FavoriteContext';
 
 const CurrencyCell = ({data}) => {
 
+    const {removeFavorite} = useContext(FavoritesContext)
+
 
     const handleClick = () => {
-        localStorage.removeItem(`code${data.code}`)
+        removeFavorite(data.code)
     }
 
     return (

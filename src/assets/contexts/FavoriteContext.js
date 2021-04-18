@@ -28,6 +28,14 @@ export const FavoritesContextProvider =({children}) => {
         setFavorites(newFavorites)
     }
 
+
+    const removeFavorite = (code) => {
+        const removeFavorite = [...favorites]
+        const newRemoveFavorite = removeFavorite.filter(el => el != code)
+        setFavorites(newRemoveFavorite)
+    }
+
+
     useEffect(() => {
         if (!favorites.length) return;
         const codes = favorites.map(el => {
@@ -38,6 +46,6 @@ export const FavoritesContextProvider =({children}) => {
     },[favorites])
 
 
-    return <FavoritesContext.Provider value={{favorites,addFavorite}}>{children}</FavoritesContext.Provider>;
+    return <FavoritesContext.Provider value={{favorites,addFavorite, removeFavorite}}>{children}</FavoritesContext.Provider>;
 }
 

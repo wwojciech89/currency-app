@@ -6,9 +6,10 @@ const CurrencyCell = ({data}) => {
 
     const {removeFavorite} = useContext(FavoritesContext)
 
-
     const handleClick = () => {
+        if (window.confirm("jesteś pewny?")) {
         removeFavorite(data.code)
+        }
     }
 
     return (

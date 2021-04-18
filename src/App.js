@@ -3,7 +3,7 @@ import "./App.css"
 import ProfileWrapper from "./assets/components/ProfileWrapper/ProfileWrapper";
 import FavoritesWrapper from "./assets/components/FavoritesWrapper/FavortiesWrapper";
 import CurrencyWrapper from "./assets/components/CurrencyWrapper/CurrencyWrapper";
-import {DataContextProvider} from "./context"
+import {DataContextProvider} from "./assets/contexts/DataContext"
 
  function App() {
   return(

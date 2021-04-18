@@ -8,7 +8,7 @@ const res = await axios.get(url);
 
 const favorites = res.data[0].rates;
 
-return data
+return favorites
 }
 
 
@@ -21,6 +21,6 @@ export const DataContextProvider =({children}) => {
     useEffect(async () => {
         setFavorites(await getData(url));
     }, []);
-    return <DataContext.Provider value={favorites}>{children}</DataContext.Provider>;
+    return <FavoritesContext.Provider value={favorites}>{children}</FavoritesContext.Provider>;
 }
 

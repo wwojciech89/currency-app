@@ -1,7 +1,7 @@
 import React, {useContext, useState} from 'react';
 import styles from "../FavoritesWrapper/FavoritesWrapper.module.scss";
 import CurrencyCell from "./CurrencyCell/CurrencyCell"
-import {DataContext} from "../../../context"
+import {DataContext} from "../../contexts/DataContext"
 
 const FavoritesWrapper = () => {
 

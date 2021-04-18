@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import styles from "../CurrencyWrapper/CurrencyWrapper.module.scss";
 import CurrencyElement from "./CurrencyElement/CurrencyElement";
-import {DataContext} from "../../../context"
+import {DataContext} from "../../contexts/DataContext"
 
 const CurrencyWrapper = () => {
 
